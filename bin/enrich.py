@@ -46,8 +46,6 @@ class EnrichCommand(EventingCommand):
                     shas = {"fingerprints": []}
                     certs = []
 
-            shas["fingerprints"][0] = "13a88367a15e4e0e9d77158c95e6718d9158ac1bc30619f29ba7bf7d5befc50a"
-            certs[0]["entity.sha256"] = "13a88367a15e4e0e9d77158c95e6718d9158ac1bc30619f29ba7bf7d5befc50a"
             ftrs.append(executor.submit(self._attachBulkCertsData, shas, certs))
             concurrent.futures.wait(ftrs, return_when=concurrent.futures.ALL_COMPLETED)
 
