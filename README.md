@@ -7,7 +7,7 @@ The cert-enricher add on has been developed for and tested on Splunk version 8.0
 ## Install Instructions
 Note: This add on has only be developed and tested for Ubuntu.
 
-Download this repository as a zip file and transfer it to the machine running your splunk search head. Unzip the repo in the `apps` folder of your Splunk install. Typically this can be found at `/opt/splunk/etc/apps`, but you may need to `echo $SPLUNK_HOME` to locate your install location.
+Download this repository as a zip file and transfer it to the machine running your splunk search head. Unzip the repo in the `apps` folder of your Splunk install. Typically this can be found at `/opt/splunk/etc/apps`, but you may need to `echo $SPLUNK_HOME` to locate your install location. In order to make the API calls work you will need to set `API_ID` and `API_SECRET` as system environment variables, or directly modify their `None` default values in `bin/config.py`.
 
 ## Usage
 The cert-enricher has a simple and intuitive usage flow due to the fact that it inherits from Splunk search commands and implements the Splunk SDK's EventingCommand. `enrich` follows the Splunk Processing Language and can be used in conjunction with other commands with the use of pipes. The typical usage structure is `One or more search criteria | enrich`, but can be augmented with other commands as well. Some examples are provided below:
